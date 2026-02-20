@@ -67,6 +67,10 @@ class Contact extends Model<Contact> {
   @Column
   companyId: number;
 
+  @Default(false)
+  @Column
+  disableBot: boolean
+
   @BelongsTo(() => Company)
   company: Company;
 
@@ -80,6 +84,10 @@ class Contact extends Model<Contact> {
   @ForeignKey(() => Whatsapp)
   @Column
   whatsappId: number;
+
+  @Default(null)
+  @Column
+  lid: string;
 
   @BelongsTo(() => Whatsapp)
   whatsapp: Whatsapp;

@@ -70,6 +70,7 @@ const messages = {
       },
       connections: {
         title: "Conexões",
+        subtitle:"Todos os WhatsApp's",
         toasts: {
           deleted: "Conexão com o WhatsApp excluída com sucesso!",
         },
@@ -87,6 +88,7 @@ const messages = {
           qrcode: "QR CODE",
           newQr: "Novo QR CODE",
           connecting: "Conectando",
+          restart:"Restart",
         },
         toolTips: {
           disconnected: {
@@ -161,7 +163,7 @@ const messages = {
         title: "Contatos",
         toasts: {
           deleted: "Contato excluído com sucesso!",
-		  deletedAll: "Todos contatos excluídos com sucesso!",
+		      deletedAll: "Todos contatos excluídos com sucesso!",
         },
 		  searchPlaceholder: "Pesquisar...",
           confirmationModal: {
@@ -285,6 +287,7 @@ const messages = {
           email: "Email",
           extraName: "Nome do campo",
           extraValue: "Valor",
+		  disableBot: "Desabilitar chatbot",
           whatsapp: "Conexão Origem: "
         },
         buttons: {
@@ -300,9 +303,13 @@ const messages = {
           add: "Adicionar fila",
           edit: "Editar fila",
         },
-		confirmationModal: {
-		  "deleteTitle": "Excluir",
-		},
+	toasts: {
+          deleted: "Registro excluído",
+        },      
+        confirmationModal: {
+          deleteTitle: "Excluir",
+          deleteMessage: "Esta ação não pode ser revertida.",
+        },
         form: {
           name: "Nome",
           color: "Cor",
@@ -320,6 +327,23 @@ const messages = {
           cancel: "Cancelar",
 		  attach: "Anexar Arquivo",
         },
+		 serviceHours: {
+          dayWeek: "Dia da semana",
+          startTimeA: "Hora Inicial - 1",
+          endTimeA: "Hora Final - 1",
+          startTimeB: "Hora Inicial - 2",
+          endTimeB: "Hora Final - 2",
+          monday: "Segunda-feira",
+          tuesday: "Terça-feira",
+          wednesday: "Quarta-feira",
+          thursday: "Quinta-feira",
+          friday: "Sexta-feira",
+          saturday: "Sábado",
+          sunday: "Domingo",
+        },
+      },
+      qrCodeModal:{
+        title:"QrCode",
       },
       userModal: {
         title: {
@@ -332,7 +356,7 @@ const messages = {
           password: "Senha",
           profile: "Perfil",
           whatsapp: "Conexão Padrão",
-
+          SuperIs: 'DEFINIR SUPERUSER (Somente Admin)',
           allTicket: "Ticket Sem Fila [Invisível]",
           allTicketEnabled: "Habilitado",
           allTicketDesabled: "Desabilitado",
@@ -350,10 +374,11 @@ const messages = {
           edit: "Editar Agendamento",
         },
         form: {
-          body: "Mensagem",
-          contact: "Contato",
-          sendAt: "Data de Agendamento",
-          sentAt: "Data de Envio",
+          body: 'Mensagem',
+          contact: 'Contato',
+          sendAt: 'Data de Agendamento',
+          sentAt: 'Data de Envio',
+          geral: 'Abrir Ticket?',
         },
         buttons: {
           okAdd: "Adicionar",
@@ -390,12 +415,22 @@ const messages = {
       ticketsManager: {
         buttons: {
           newTicket: "Novo",
+          closeallTicket: "Fechar"
         },
       },
       ticketsQueueSelect: {
         placeholder: "Filas",
       },
       tickets: {
+        inbox: {
+          closedAllTickets: "Fechar todos os tickets?",
+          closedAll: "Fechar Todos",
+          newTicket: "Novo Ticket",
+          yes: "SIM",
+          no: "NÃO",
+          open: "Abertos",
+          resolverd: "Resolvidos",
+        },
         toasts: {
           deleted: "O atendimento que você estava foi deletado.",
         },
@@ -409,6 +444,16 @@ const messages = {
         },
         search: {
           placeholder: "Buscar atendimento e mensagens",
+          filterConnections: "Filtro por conexões",
+          filterContacts: "Filtro por contato",
+          filterConections: "Filtro por Conexão",
+          filterConectionsOptions: {
+            open: "Aberto",
+            closed: "Fechado",
+            pending: "Pendente",
+          },
+          filterUsers: "Filtro por Usuarios",
+          ticketsPerPage: "Tickets por página"
         },
         buttons: {
           showAll: "Todos",
@@ -426,6 +471,7 @@ const messages = {
         },
       },
       ticketsList: {
+        called: "Chamado",
         pendingHeader: "Aguardando",
         assignedHeader: "Atendendo",
         noTicketsTitle: "Nada aqui!",
@@ -434,7 +480,9 @@ const messages = {
         buttons: {
           accept: "Aceitar",
           closed: "Finalizar",
-          reopen: "Reabrir"
+		  transfer: "Transferir",
+          reopen: "Reabrir",
+		  exportAsPDF: "Exportar em PDF"
         },
       },
       newTicketModal: {
@@ -463,10 +511,12 @@ const messages = {
           schedules: "Agendamentos",
           campaigns: "Campanhas",
           annoucements: "Informativos",
+		  logplw:"Atualizações",
           chats: "Chat Interno",
           financeiro: "Financeiro",
           files: "Lista de arquivos",
           prompts: "Open.Ai",
+		  reports: "Relatórios",
           queueIntegration: "Integrações",
         },
         appBar: {
@@ -498,6 +548,27 @@ const messages = {
             "Você tem certeza? Essa ação não pode ser revertida! e será removida das filas e conexões vinculadas",
         },
       },
+	reports: {
+        title: "Relatórios de Atendimentos",
+        table: {
+          id: "Ticket",
+          user: "Usuário",
+          dateOpen: "Data Abertura",
+          dateClose: "Data Fechamento",
+          NPS: "NPS",
+          status: "Status",
+          whatsapp: "Conexão",
+          queue: "Fila",
+          actions: "Ações",
+          lastMessage: "Últ. Mensagem",
+          contact: "Cliente",
+          supportTime: "Tempo de Atendimento"
+        },
+        buttons: {
+          filter: "Aplicar Filtro",
+        },
+        searchPlaceholder: "Pesquisar...",
+      },	  
       files: {
         title: "Lista de arquivos",
         table: {
@@ -519,6 +590,13 @@ const messages = {
           deleteMessage: "Tem certeza que deseja deletar esta lista?",
           deleteAllMessage: "Tem certeza que deseja deletar todas as listas?",
         },
+      },
+      languages: {
+        undefined: "Idioma",
+        "pt-BR": "Português",
+        es: "Español",
+        en: "English",
+        tr: "Türkçe",
       },
       messagesAPI: {
         title: "API",
@@ -789,9 +867,14 @@ const messages = {
         table: {
 		  id: "ID",
           name: "Nome",
+		  status: "Status",
           email: "Email",
           profile: "Perfil",
           actions: "Ações",
+        },
+		status: {
+          online: "Usuários online",
+          offline: "Usuários offline",
         },
         buttons: {
           add: "Adicionar usuário",
@@ -882,6 +965,23 @@ const messages = {
           "Reabra ou aceite esse ticket para enviar uma mensagem.",
         signMessage: "Assinar",
       },
+      mediaModal: {
+        title: "Enviar Mídia",
+        caption: "Legenda (opcional)",
+        captionPlaceholder: "Digite uma legenda para o arquivo...",
+        addMore: "Adicionar mais",
+        dragDropText: "Solte os arquivos aqui para enviar",
+        buttons: {
+          cancel: "Cancelar",
+          send: "Enviar",
+        },
+        maxFiles: "Máximo de 10 arquivos permitidos",
+      },
+      messageSearch: {
+        placeholder: "Buscar mensagens...",
+        noResults: "Nenhuma mensagem encontrada",
+        searchButton: "Buscar mensagens",
+      },
       contactDrawer: {
         header: "Dados do contato",
         buttons: {
@@ -938,8 +1038,12 @@ const messages = {
       },
       messageOptionsMenu: {
         delete: "Deletar",
+		reactionSuccess: "Reação add",
         reply: "Responder",
 		edit: 'Editar Mensagem',
+		forward: "Encaminhar",
+        toForward: "Encaminhar",
+		react: "Reagir",
         confirmationModal: {
           title: "Apagar mensagem?",
           message: "Esta ação não pode ser revertida.",
@@ -980,6 +1084,7 @@ const messages = {
           "Esta cor já está em uso, escolha outra.",
         ERR_WAPP_GREETING_REQUIRED:
           "A mensagem de saudação é obrigatório quando há mais de uma fila.",
+        ERR_CHECK_NUMBER: "Número inválido. Verifique o número e tente novamente.",
       },
     },
   },

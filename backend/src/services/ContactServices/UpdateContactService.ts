@@ -13,6 +13,7 @@ interface ContactData {
   name?: string;
   active?: boolean;  
   extraInfo?: ExtraInfo[];
+  disableBot?: boolean
 }
 
 interface Request {
@@ -26,11 +27,11 @@ const UpdateContactService = async ({
   contactId,
   companyId
 }: Request): Promise<Contact> => {
-  const { email, name, number, extraInfo, active } = contactData;
+  const { email, name, number, extraInfo, active, disableBot } = contactData;
 
   const contact = await Contact.findOne({
     where: { id: contactId },
-    attributes: ["id", "name", "number", "email", "companyId", "profilePicUrl", "active"],
+    attributes: ["id", "name", "number","lid", "email", "companyId", "profilePicUrl", "active"],
     include: ["extraInfo"]
   });
 
@@ -64,11 +65,12 @@ const UpdateContactService = async ({
     name,
     number,
     email,
-	active
+	active,
+  disableBot
   });
 
   await contact.reload({
-    attributes: ["id", "name", "number", "email", "profilePicUrl","active"],
+    attributes: ["id", "name", "number", "lid", "email", "profilePicUrl","active"],
     include: ["extraInfo"]
   });
 
